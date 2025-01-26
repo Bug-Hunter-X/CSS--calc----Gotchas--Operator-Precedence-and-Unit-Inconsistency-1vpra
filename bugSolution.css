@@ -1,0 +1,37 @@
+/* bugSolution.css */
+
+/* Correcting the width calculation: explicitly stating units helps clarity */
+.correct-width {
+  width: calc(100% - 20px);
+}
+
+/* Correcting the percentage calculation:  use a helper class for proper percentage calculation in some cases. */
+.container {
+  width: 500px;
+}
+
+.correct-percentage {
+  width: calc(50% - 100px); /* This assumes container is 500px */
+}
+
+/*Another example using parent's width*/
+.parent{
+  width: 400px;
+}
+.child {
+  width: calc(50% - 10px);
+}
+/*Or you could use viewport units for more consistent results*/
+.viewport-based {
+  width: calc(50vw - 10px);
+}
+
+/*Always use brackets to avoid operator precedence issues*/
+.complicated-calc {
+  width: calc((100% - 50px) / 2);
+}
+
+/*Avoid mixing percentage and pixels without proper consideration*/
+.avoid-mixing {
+  width: calc(100% - 20px); /*This is better than 100% - 20% */
+}
